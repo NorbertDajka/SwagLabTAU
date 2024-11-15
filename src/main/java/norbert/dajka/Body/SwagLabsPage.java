@@ -1,4 +1,6 @@
-package norbert.dajka;
+package norbert.dajka.Body;
+import com.codeborne.selenide.Selenide;
+
 import static com.codeborne.selenide.Selenide.*;
 
 
@@ -9,5 +11,8 @@ public class SwagLabsPage {
     public void openSwaglabsUrl () {
         open(swagLabsUrl);
     }
+
+    public void refresh() {
+        Selenide.refresh();}
 
 }

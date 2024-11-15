@@ -1,7 +1,12 @@
 package norbert.dajka;
 
+import norbert.dajka.Body.SwagLabsPage;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
-    }
+
+    SwagLabsPage page = new SwagLabsPage();
+    page.openSwaglabsUrl();
+
+        }
 }
