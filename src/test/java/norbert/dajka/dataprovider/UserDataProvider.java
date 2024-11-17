@@ -21,5 +21,24 @@ public class UserDataProvider {
                 {visualUser}
                 };
     }
+    @DataProvider(name = "invalidUserDataProvider")
+    public Object[][] feedInvalidUserData(){
+        User terkeberbeUser = new User("terkeberke","merketerke");
 
+        return new Object [][]{
+                {terkeberbeUser}
+
+        };
+
+    }
+    @DataProvider(name = "lockedUserDataProvider")
+    public Object[][] feedLockedUserData(){
+        User lockedOutUser = new User("locked_out_user","secret_sauce");
+
+        return new Object [][]{
+                {lockedOutUser}
+
+        };
+
+    }
 }

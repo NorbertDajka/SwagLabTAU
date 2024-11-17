@@ -23,6 +23,7 @@ public class LoginModalTest extends BaseTestConfig {
         loginModal = new LoginModal();
         this.page.openSwaglabsUrl();
         sPage = new ShoppingPage();
+
 }
 
 @Test (dataProviderClass = UserDataProvider.class, dataProvider = "validUserDataProvider")
@@ -32,11 +33,30 @@ public class LoginModalTest extends BaseTestConfig {
     Assert.assertTrue(sPage.isShoppingCartBadgeVisible(),"Login is functional");
     }
 @Test
-    public void testLoginWithNoCredentials(){
+    public void users_cannot_login_with_no_credentials(){
 
     loginModal.login("","");
     Assert.assertTrue(loginModal.errorMsgExistsAndVisible());
     Assert.assertEquals(loginModal.getErrorMsg(),"Epic sadface: Username is required");
+
+    }
+@Test (dataProviderClass = UserDataProvider.class, dataProvider = "invalidUserDataProvider")
+
+    public void users_cannot_login_with_invalid_credentials(User user) {
+
+    loginModal.login(user.getUsername(),user.getPassword());
+    Assert.assertTrue(loginModal.errorMsgExistsAndVisible());
+    Assert.assertEquals(loginModal.getErrorMsg(),"Epic sadface: Username and password do not match any user in this service");
+
+}
+
+    @Test (dataProviderClass = UserDataProvider.class, dataProvider = "lockedUserDataProvider")
+
+    public void users_cannot_login_with_locked_credentials(User user) {
+
+        loginModal.login(user.getUsername(),user.getPassword());
+        Assert.assertTrue(loginModal.errorMsgExistsAndVisible());
+        Assert.assertEquals(loginModal.getErrorMsg(),"Epic sadface: Sorry, this user has been locked out.");
 
     }
 
