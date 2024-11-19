@@ -5,7 +5,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 
 
-public class SwagLabsPage {
+public class Page {
     String swagLabsUrl = ("https://www.saucedemo.com/");
 
     public void openSwaglabsUrl () {

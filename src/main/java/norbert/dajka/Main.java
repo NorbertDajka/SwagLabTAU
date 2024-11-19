@@ -1,11 +1,11 @@
 package norbert.dajka;
 
-import norbert.dajka.Body.SwagLabsPage;
+import norbert.dajka.Body.Page;
 
 public class Main {
     public static void main(String[] args) {
 
-    SwagLabsPage page = new SwagLabsPage();
+    Page page = new Page();
     page.openSwaglabsUrl();
 
         }

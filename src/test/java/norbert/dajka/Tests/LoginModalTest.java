@@ -1,25 +1,24 @@
 package norbert.dajka.Tests;
 
 import norbert.dajka.Body.LoginModal;
-import norbert.dajka.Body.SwagLabsPage;
+import norbert.dajka.Body.Page;
 import norbert.dajka.Pages.ShoppingPage;
 import norbert.dajka.config.BaseTestConfig;
 import norbert.dajka.dataprovider.User;
 import norbert.dajka.dataprovider.UserDataProvider;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class LoginModalTest extends BaseTestConfig {
 
-    SwagLabsPage page;
+    Page page;
     LoginModal loginModal;
     ShoppingPage sPage;
 @BeforeMethod
 
     public void setUp()  {
-        page = new SwagLabsPage();
+        page = new Page();
         loginModal = new LoginModal();
         this.page.openSwaglabsUrl();
         sPage = new ShoppingPage();
