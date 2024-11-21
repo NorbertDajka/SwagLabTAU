@@ -3,7 +3,6 @@ package norbert.dajka.dataprovider;
 public class User {
   private final String username;
   private final String password;
-  private  String errormessage;
 
 
     public User(String username, String password) {
@@ -12,9 +11,6 @@ public class User {
 
     }
 
-    public void setErrormessage(String errormessage) {
-        this.errormessage = errormessage;
-    }
     public String getUsername() {
         return this.username;
     }

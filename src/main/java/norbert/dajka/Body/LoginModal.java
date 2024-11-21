@@ -24,4 +24,5 @@ public class LoginModal {
     public String getErrorMsg() {
         return errorMsg.text();
     }
-}
+
+   }
