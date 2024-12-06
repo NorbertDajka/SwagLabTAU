@@ -31,7 +31,7 @@ public class AddingOneProductToCartTest extends BaseTestConfig {
     @Test
     public void add_one_product_to_cart () {
 
-        this.product = new Product("4","Sauce Labs Backpack","29.99");
+        this.product = new Product("4","Sauce Labs Backpack","29.99","");
         product.addProductToCart();
         Assert.assertTrue(header.shoppingCartBageIsDisplayedAndExists());
         Assert.assertEquals(header.badgeTextNr(),1);
@@ -39,7 +39,7 @@ public class AddingOneProductToCartTest extends BaseTestConfig {
 
     @Test
     public void select_product_details_page () {
-        this.product = new Product("5","Sauce Labs Fleece Jacket","49.99");
+        this.product = new Product("5","Sauce Labs Fleece Jacket","49.99","");
         product.selectProduct();
 
         Assert.assertTrue(productPage.isBackButtonDisplayedAndExists());

@@ -34,7 +34,7 @@ public class AddingMultipleProductsToCartTest extends BaseTestConfig {
     @Test(dataProviderClass = ProductDataProvider.class,dataProvider = "allProductsDataProvider")
 
     public void add_all_products_to_cart_as_standard_user(Product product) {
-        this.product = new Product(product.getProductId(),product.getProductName(),product.getProductPrice());
+
         product.addProductToCart();
 
         Assert.assertTrue(header.shoppingCartBageIsDisplayedAndExists());
@@ -45,7 +45,7 @@ public class AddingMultipleProductsToCartTest extends BaseTestConfig {
     @Test(dataProviderClass = ProductDataProvider.class,dataProvider = "allProductsDataProvider")
 
     public void select_all_products_to_cart_as_standard_user(Product product) {
-        this.product = new Product(product.getProductId(),product.getProductName(),product.getProductPrice());
+
         product.selectProduct();
 
         Assert.assertTrue(productPage.isBackButtonDisplayedAndExists());
